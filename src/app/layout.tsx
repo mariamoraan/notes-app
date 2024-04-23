@@ -1,3 +1,6 @@
+import "reflect-metadata";
+import "../../polyfills";
+
 import type { Metadata } from "next";
 import "../core/styles/globals.css";
 

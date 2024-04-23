@@ -1,0 +1,1 @@
+export const NOTES_REPOSITORY = Symbol("NOTES_REPOSITORY");
