@@ -1,0 +1,26 @@
+:root {
+  /* Palette */
+  --background-color: white;
+  --on-background-color: #2b252a;
+  --primary-color: #ffa378;
+  --on-primary-color: white;
+  --secondary-color: #2e2f33;
+  --on-secondary-color: white;
+  --accent-color: #ff7d52;
+  --on-accent-color: white;
+
+  --error-color: #e53e3e;
+  --on-error-color: white;
+  --success-color: #38a169;
+  --on-success-color: white;
+
+  --light-gray-color: #d1d5db;
+  --gray-color: #818285;
+
+  /* Misc */
+  --border-radius: var(--xs);
+
+  /* Typography */
+  --body-font-family: "Heebo-Regular", sans-serif;
+  --title-font-family: "Heebo-Medium", sans-serif;
+}
