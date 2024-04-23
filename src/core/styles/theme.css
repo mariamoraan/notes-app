@@ -2,6 +2,9 @@
   /* Palette */
   --background-color: white;
   --on-background-color: #2b252a;
+  --background-secondary-color: #e6e8ef;
+  --on-background-secondary-color: #989898;
+  --on-background-secondary-title-color: #2b252a;
   --primary-color: #ffa378;
   --on-primary-color: white;
   --secondary-color: #2e2f33;

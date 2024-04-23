@@ -2,11 +2,12 @@ import { Note } from "../domain/note";
 import { NotesRepository } from "../domain/notes-repository";
 import { NotesMother } from "../domain/test/notes.mother";
 
-export class NotesLocalRepository implements NotesRepository {
+export class NotesFakeRepository implements NotesRepository {
+  private notes = NotesMother.getNotes();
   async findAll() {
-    return NotesMother.getNotes();
+    return this.notes;
   }
   async create(note: Note) {
-    alert(note.title);
+    this.notes.push(note);
   }
 }

@@ -1,7 +1,7 @@
 import { container } from "tsyringe";
 import { NOTES_REPOSITORY } from "./injection-tokens";
-import { NotesLocalRepository } from "@/features/notes/infrastructure/notes-local-repository";
+import { NotesFakeRepository } from "@/features/notes/infrastructure/notes-fake-repository";
 
 export const injectAppDependencies = () => {
-  container.registerSingleton(NOTES_REPOSITORY, NotesLocalRepository);
+  container.registerSingleton(NOTES_REPOSITORY, NotesFakeRepository);
 };
