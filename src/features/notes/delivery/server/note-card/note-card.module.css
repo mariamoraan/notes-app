@@ -31,8 +31,21 @@
   white-space: pre-wrap;
 }
 
-.color-tag {
+.card-footer {
   margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.edited {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-size: small;
+}
+
+.color-tag {
   width: 2ch;
   height: 2ch;
   justify-self: flex-end;

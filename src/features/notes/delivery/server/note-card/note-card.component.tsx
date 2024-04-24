@@ -2,6 +2,7 @@ import { Note } from "@/features/notes/domain/note";
 import styles from "./note-card.module.css";
 import { bind } from "@/core/styles/bind";
 import Link from "next/link";
+import { TimeIcon } from "@/core/components/icons/icons";
 const cx = bind(styles);
 
 interface Props {
@@ -18,6 +19,12 @@ export const NoteCard = (props: Props) => {
         </div>
         <div className={cx("content")}>
           <p className={cx("text")}>{note.content}</p>
+        </div>
+        <div className={cx("card-footer")}>
+          <div className={cx("edited")}>
+            <TimeIcon />
+            {note.lastEditionDate.toIsoDate()}
+          </div>
           <div
             className={cx("color-tag")}
             style={{ background: Note.noteColors[note.color].color }}

@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { GetNoteQuery } from "@/features/notes/application/get-note.query";
 import { UpdateNoteCommand } from "@/features/notes/application/update-note.command";
+import { Datetime } from "@/core/datetime/datetime";
 
 const cx = bind(styles);
 
@@ -17,11 +18,13 @@ interface Props {
   id: string;
 }
 
-const voidNote = {
+const voidNote: NotePrimitives = {
   id: "",
   title: "",
   content: "",
   color: Note.noteColors.PINK.name,
+  creationDate: Datetime.fromNow(),
+  lastEditionDate: Datetime.fromNow(),
 };
 
 export const EditableNote = (props: Props) => {
@@ -55,7 +58,14 @@ export const EditableNote = (props: Props) => {
           <ArrowLeftIcon size={24} />
         </button>
         <button
-          onClick={() => onSubmit(Note.fromPrimitives(note))}
+          onClick={() =>
+            onSubmit(
+              Note.fromPrimitives({
+                ...note,
+                lastEditionDate: Datetime.fromNow(),
+              })
+            )
+          }
           className={cx(["icon-button", "save-button"])}
         >
           <SaveIcon size={24} />

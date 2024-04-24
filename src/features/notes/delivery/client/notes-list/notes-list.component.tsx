@@ -7,11 +7,10 @@ import { useNotes } from "../../context/notes.context";
 const cx = bind(styles);
 
 export const NotesList = () => {
-  const { filteredNotes } = useNotes();
-
+  const { filteredNotes, orderNotes } = useNotes();
   return (
     <ul className={cx("wrapper")}>
-      {filteredNotes.map((note) => (
+      {orderNotes(filteredNotes, "DESC").map((note) => (
         <li key={note.id}>
           <NoteCard note={note} />
         </li>

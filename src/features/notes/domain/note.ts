@@ -1,3 +1,4 @@
+import { Datetime } from "@/core/datetime/datetime";
 import { injectable } from "tsyringe";
 
 export interface NotePrimitives {
@@ -5,6 +6,8 @@ export interface NotePrimitives {
   title: string;
   content: string;
   color: string;
+  creationDate: Datetime;
+  lastEditionDate: Datetime;
 }
 
 @injectable()
@@ -13,11 +16,15 @@ export class Note {
   title: string;
   content: string;
   color: string;
+  creationDate: Datetime;
+  lastEditionDate: Datetime;
   constructor(notePrimitives: NotePrimitives) {
     this.id = notePrimitives.id;
     this.title = notePrimitives.title;
     this.content = notePrimitives.content;
     this.color = notePrimitives.color;
+    this.creationDate = notePrimitives.creationDate;
+    this.lastEditionDate = notePrimitives.lastEditionDate;
   }
 
   static noteColors: { [key: string]: { name: string; color: string } } = {
@@ -38,6 +45,8 @@ export class Note {
       title: this.title,
       content: this.content,
       color: this.color,
+      creationDate: this.creationDate,
+      lastEditionDate: this.lastEditionDate,
     };
   }
 }

@@ -9,6 +9,7 @@ import { useGetUseCase } from "@/core/hooks/use-get-use-case";
 import { CreateNoteCommand } from "@/features/notes/application/create-note.command";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Datetime } from "@/core/datetime/datetime";
 
 const cx = bind(styles);
 
@@ -20,6 +21,8 @@ export const CreateNote = () => {
     title: "",
     content: "",
     color: Note.noteColors.PINK.name,
+    creationDate: Datetime.fromNow(),
+    lastEditionDate: Datetime.fromNow(),
   });
   const onSubmit = async (note: Note) => {
     await execute(note);
@@ -36,7 +39,14 @@ export const CreateNote = () => {
           <ArrowLeftIcon size={24} />
         </button>
         <button
-          onClick={() => onSubmit(Note.fromPrimitives(note))}
+          onClick={() =>
+            onSubmit(
+              Note.fromPrimitives({
+                ...note,
+                lastEditionDate: Datetime.fromNow(),
+              })
+            )
+          }
           className={cx(["icon-button", "save-button"])}
         >
           <SaveIcon size={24} />
