@@ -5,11 +5,11 @@ import type { NotesRepository } from "../domain/notes-repository";
 import { inject, injectable } from "tsyringe";
 
 @injectable()
-export class CreateNoteCommand implements Command<Note> {
+export class UpdateNoteCommand implements Command<Note> {
   constructor(
     @inject(NOTES_REPOSITORY) private readonly notesRepository: NotesRepository
   ) {}
   async handle(note: Note): Promise<void> {
-    await this.notesRepository.create(note);
+    await this.notesRepository.update(note);
   }
 }

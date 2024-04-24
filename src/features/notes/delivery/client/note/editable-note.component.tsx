@@ -9,6 +9,7 @@ import { useGetUseCase } from "@/core/hooks/use-get-use-case";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { GetNoteQuery } from "@/features/notes/application/get-note.query";
+import { UpdateNoteCommand } from "@/features/notes/application/update-note.command";
 
 const cx = bind(styles);
 
@@ -16,16 +17,19 @@ interface Props {
   id: string;
 }
 
+const voidNote = {
+  id: "",
+  title: "",
+  content: "",
+  color: Note.noteColors.PINK.name,
+};
+
 export const EditableNote = (props: Props) => {
   const { id } = props;
   const router = useRouter();
-  const { execute: getNote, result: noteRes } = useGetUseCase(GetNoteQuery);
-  const voidNote = {
-    id: "",
-    title: "",
-    content: "",
-    color: Note.noteColors.PINK.name,
-  };
+  const { execute: getNote, result: currentNote } = useGetUseCase(GetNoteQuery);
+  const { execute: updateNote } = useGetUseCase(UpdateNoteCommand);
+
   const [note, setNote] = useState<NotePrimitives>(voidNote);
 
   useEffect(() => {
@@ -33,11 +37,11 @@ export const EditableNote = (props: Props) => {
   }, [getNote, id]);
 
   useEffect(() => {
-    setNote(noteRes ? noteRes.toPrimitives() : voidNote);
-  }, [noteRes]);
+    setNote(currentNote ? currentNote.toPrimitives() : voidNote);
+  }, [currentNote]);
 
   const onSubmit = async (note: Note) => {
-    //await execute(note);
+    updateNote(note);
     router.back();
   };
 
