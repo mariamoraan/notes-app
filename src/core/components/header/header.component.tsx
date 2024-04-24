@@ -13,7 +13,7 @@ export const Header = () => {
         width={100}
         alt="yourself"
         src={
-          "https://cdn.dribbble.com/users/2483340/avatars/normal/679ce7e9f4a95bbe47a9630d7a59d554.jpg?1632589132"
+          "https://img.freepik.com/foto-gratis/lindo-gatito-domestico-sienta-ventana-mirando-fuera-ia-generativa_188544-12519.jpg?size=626&ext=jpg&ga=GA1.1.1687694167.1711843200&semt=ais"
         }
       />
     </div>

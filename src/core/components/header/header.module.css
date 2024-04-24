@@ -11,7 +11,8 @@
 
 .image {
   height: 50px;
-  width: auto;
+  width: 50px;
+  object-fit: cover;
   border: 1px solid var(--on-background-color);
   border-radius: 100%;
 }
