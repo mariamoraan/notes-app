@@ -1,6 +1,6 @@
 import { injectable } from "tsyringe";
 
-interface NotePrimitives {
+export interface NotePrimitives {
   id: string;
   title: string;
   content: string;

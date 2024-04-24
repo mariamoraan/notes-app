@@ -5,7 +5,7 @@ import type { NotesRepository } from "../domain/notes-repository";
 import { inject, injectable } from "tsyringe";
 
 @injectable()
-export class CreateNote implements Command<Note> {
+export class CreateNoteCommand implements Command<Note> {
   constructor(
     @inject(NOTES_REPOSITORY) private readonly notesRepository: NotesRepository
   ) {}

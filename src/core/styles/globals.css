@@ -11,7 +11,11 @@
 body {
   color: var(--on-background-color);
   background: var(--background-color);
+}
+
+* {
   font-family: "Roboto", sans-serif;
+  font-size: medium;
 }
 
 h1,
@@ -24,6 +28,6 @@ h6 {
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }

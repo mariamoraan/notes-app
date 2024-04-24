@@ -1,29 +1,17 @@
 "use client";
 
-import { useGetUseCase } from "@/core/hooks/use-get-use-case";
-import { GetNotesQuery } from "@/features/notes/application/get-notes.query";
-import { Note } from "@/features/notes/domain/note";
-import { useEffect, useState } from "react";
 import { NoteCard } from "../../server/note-card/note-card.component";
 import styles from "./notes-list.module.css";
 import { bind } from "@/core/styles/bind";
+import { useNotes } from "../../context/notes.context";
 const cx = bind(styles);
 
 export const NotesList = () => {
-  const { execute, result } = useGetUseCase(GetNotesQuery);
-  const [notes, setNotes] = useState<Note[]>(result || []);
-
-  useEffect(() => {
-    execute();
-  }, [execute]);
-
-  useEffect(() => {
-    setNotes(result || []);
-  }, [result]);
+  const { filteredNotes } = useNotes();
 
   return (
     <ul className={cx("wrapper")}>
-      {notes.map((note) => (
+      {filteredNotes.map((note) => (
         <li key={note.id}>
           <NoteCard note={note} />
         </li>

@@ -1,0 +1,21 @@
+.wrapper {
+  padding: 8px;
+  position: absolute;
+  bottom: min(10dvh, 100px);
+  max-width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  background: var(--primary-color);
+  color: var(--on-primary-color);
+  border: none;
+  outline: none;
+  border-radius: 100%;
+  transition: 200ms ease;
+}
+
+.wrapper:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

@@ -3,6 +3,12 @@
   border-radius: 4px;
   background: var(--background-secondary-color);
   color: var(--on-background-secondary-color);
+  transition: 500ms ease;
+}
+
+.wrapper:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .header {
@@ -22,6 +28,7 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  white-space: pre-wrap;
 }
 
 .color-tag {
