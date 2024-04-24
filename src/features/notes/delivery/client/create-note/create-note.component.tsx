@@ -10,6 +10,7 @@ import { CreateNoteCommand } from "@/features/notes/application/create-note.comm
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { DateTime } from "@/core/datetime/datetime";
+import { UUID } from "@/core/uuid/uuid";
 
 const cx = bind(styles);
 
@@ -17,7 +18,7 @@ export const CreateNote = () => {
   const router = useRouter();
   const { execute } = useGetUseCase(CreateNoteCommand);
   const [note, setNote] = useState<NotePrimitives>({
-    id: "",
+    id: UUID.generateUUID(),
     title: "",
     content: "",
     color: Note.noteColors.PINK.name,

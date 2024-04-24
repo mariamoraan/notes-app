@@ -2,7 +2,7 @@
 
 import { bind } from "@/core/styles/bind";
 import styles from "./note-form.module.css";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { Note, NotePrimitives } from "@/features/notes/domain/note";
 import { DateTime } from "@/core/datetime/datetime";
 const cx = bind(styles);
