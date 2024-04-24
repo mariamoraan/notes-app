@@ -4,7 +4,7 @@ import { bind } from "@/core/styles/bind";
 import styles from "./note-form.module.css";
 import { Dispatch, SetStateAction, useState } from "react";
 import { Note, NotePrimitives } from "@/features/notes/domain/note";
-import { Datetime } from "@/core/datetime/datetime";
+import { DateTime } from "@/core/datetime/datetime";
 const cx = bind(styles);
 
 interface Props {
@@ -17,7 +17,7 @@ export const NoteForm = (props: Props) => {
   const { onSubmit, note, setNote } = props;
   const submit = async () => {
     onSubmit(
-      Note.fromPrimitives({ ...note, lastEditionDate: Datetime.fromNow() })
+      Note.fromPrimitives({ ...note, lastEditionDate: DateTime.fromNow() })
     );
   };
 

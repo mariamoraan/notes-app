@@ -6,7 +6,7 @@ enum DateComparison {
   "MAYOR" = 1,
 }
 
-export class Datetime {
+export class DateTime {
   constructor(private readonly datetime: LuxonDatetime) {}
   toIso() {
     return this.datetime.toUTC().toISO();
@@ -19,12 +19,12 @@ export class Datetime {
   }
   static fromIso(isoDate: string) {
     const luxonDate = LuxonDatetime.fromISO(isoDate);
-    return new Datetime(luxonDate);
+    return new DateTime(luxonDate);
   }
   static fromNow() {
-    return new Datetime(LuxonDatetime.now());
+    return new DateTime(LuxonDatetime.now());
   }
-  static compare(date1: Datetime, date2: Datetime): DateComparison {
+  static compare(date1: DateTime, date2: DateTime): DateComparison {
     if (date1.toMillis() < date2.toMillis()) return DateComparison.MINOR;
     if (date1.toMillis() > date2.toMillis()) return DateComparison.MAYOR;
     return DateComparison.EQUAL;

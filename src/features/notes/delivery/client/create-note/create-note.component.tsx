@@ -9,7 +9,7 @@ import { useGetUseCase } from "@/core/hooks/use-get-use-case";
 import { CreateNoteCommand } from "@/features/notes/application/create-note.command";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Datetime } from "@/core/datetime/datetime";
+import { DateTime } from "@/core/datetime/datetime";
 
 const cx = bind(styles);
 
@@ -21,8 +21,8 @@ export const CreateNote = () => {
     title: "",
     content: "",
     color: Note.noteColors.PINK.name,
-    creationDate: Datetime.fromNow(),
-    lastEditionDate: Datetime.fromNow(),
+    creationDate: DateTime.fromNow(),
+    lastEditionDate: DateTime.fromNow(),
   });
   const onSubmit = async (note: Note) => {
     await execute(note);
@@ -43,7 +43,7 @@ export const CreateNote = () => {
             onSubmit(
               Note.fromPrimitives({
                 ...note,
-                lastEditionDate: Datetime.fromNow(),
+                lastEditionDate: DateTime.fromNow(),
               })
             )
           }

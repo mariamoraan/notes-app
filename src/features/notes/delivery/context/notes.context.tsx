@@ -9,7 +9,7 @@ import {
 import { Note } from "../../domain/note";
 import { useGetUseCase } from "@/core/hooks/use-get-use-case";
 import { GetNotesQuery } from "../../application/get-notes.query";
-import { Datetime } from "@/core/datetime/datetime";
+import { DateTime } from "@/core/datetime/datetime";
 
 export interface NotesState {
   notes: Note[];
@@ -41,7 +41,7 @@ export const NotesProvider: FC<PropsWithChildren> = (props) => {
 
   const orderNotes = (notes: Note[], order: "ASC" | "DESC" = "ASC") => {
     const orderedNotesAsc = notes.sort((note1, note2) =>
-      Datetime.compare(note1.lastEditionDate, note2.creationDate)
+      DateTime.compare(note1.lastEditionDate, note2.creationDate)
     );
     if (order === "ASC") return orderedNotesAsc;
     return orderedNotesAsc.reverse();

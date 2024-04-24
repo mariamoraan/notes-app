@@ -1,4 +1,4 @@
-import { Datetime } from "@/core/datetime/datetime";
+import { DateTime } from "@/core/datetime/datetime";
 import { injectable } from "tsyringe";
 
 export interface NotePrimitives {
@@ -6,8 +6,8 @@ export interface NotePrimitives {
   title: string;
   content: string;
   color: string;
-  creationDate: Datetime;
-  lastEditionDate: Datetime;
+  creationDate: DateTime;
+  lastEditionDate: DateTime;
 }
 
 @injectable()
@@ -16,8 +16,8 @@ export class Note {
   title: string;
   content: string;
   color: string;
-  creationDate: Datetime;
-  lastEditionDate: Datetime;
+  creationDate: DateTime;
+  lastEditionDate: DateTime;
   constructor(notePrimitives: NotePrimitives) {
     this.id = notePrimitives.id;
     this.title = notePrimitives.title;

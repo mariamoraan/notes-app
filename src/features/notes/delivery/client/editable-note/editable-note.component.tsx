@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { GetNoteQuery } from "@/features/notes/application/get-note.query";
 import { UpdateNoteCommand } from "@/features/notes/application/update-note.command";
-import { Datetime } from "@/core/datetime/datetime";
+import { DateTime } from "@/core/datetime/datetime";
 
 const cx = bind(styles);
 
@@ -23,8 +23,8 @@ const voidNote: NotePrimitives = {
   title: "",
   content: "",
   color: Note.noteColors.PINK.name,
-  creationDate: Datetime.fromNow(),
-  lastEditionDate: Datetime.fromNow(),
+  creationDate: DateTime.fromNow(),
+  lastEditionDate: DateTime.fromNow(),
 };
 
 export const EditableNote = (props: Props) => {
@@ -62,7 +62,7 @@ export const EditableNote = (props: Props) => {
             onSubmit(
               Note.fromPrimitives({
                 ...note,
-                lastEditionDate: Datetime.fromNow(),
+                lastEditionDate: DateTime.fromNow(),
               })
             )
           }
