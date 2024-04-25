@@ -1,6 +1,6 @@
 import { NOTES_REPOSITORY } from "../../../core/dependency-injection/injection-tokens";
 import { Command } from "../../../core/use-case/command";
-import { Note } from "../domain/note";
+import { Note } from "../domain/note.entity";
 import type { NotesRepository } from "../domain/notes-repository";
 import { inject, injectable } from "tsyringe";
 

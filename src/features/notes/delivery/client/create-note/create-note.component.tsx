@@ -3,7 +3,7 @@
 import { bind } from "@/core/styles/bind";
 import { NoteForm } from "../note-form/note-form.component";
 import styles from "./create-note.module.css";
-import { Note, NotePrimitives } from "@/features/notes/domain/note";
+import { Note, NotePrimitives } from "@/features/notes/domain/note.entity";
 import { useGetUseCase } from "@/core/hooks/use-get-use-case";
 import { CreateNoteCommand } from "@/features/notes/application/create-note.command";
 import { useState } from "react";

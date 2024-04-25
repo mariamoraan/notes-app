@@ -1,4 +1,4 @@
-import { Note } from "@/features/notes/domain/note";
+import { Note } from "@/features/notes/domain/note.entity";
 import styles from "./note-card.module.css";
 import { bind } from "@/core/styles/bind";
 import Link from "next/link";

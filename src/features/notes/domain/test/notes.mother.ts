@@ -1,5 +1,5 @@
 import { DateTime } from "@/core/datetime/datetime";
-import { Note } from "../note";
+import { Note } from "../note.entity";
 import { NoteColor } from "../value-objects/note-color.value-object";
 
 export class NotesMother {

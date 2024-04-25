@@ -3,7 +3,7 @@
 import { bind } from "@/core/styles/bind";
 import { NoteForm } from "../note-form/note-form.component";
 import styles from "./edite-note.module.css";
-import { Note, NotePrimitives } from "@/features/notes/domain/note";
+import { Note, NotePrimitives } from "@/features/notes/domain/note.entity";
 import { useGetUseCase } from "@/core/hooks/use-get-use-case";
 import { useEffect, useState } from "react";
 import { GetNoteQuery } from "@/features/notes/application/get-note.query";
@@ -47,7 +47,9 @@ export const EditeNote = (props: Props) => {
 
   return (
     <div className={cx("wrapper")}>
-      <NoteForm onSubmit={onSubmit} note={note} setNote={setNote} />
+      {note.id && (
+        <NoteForm onSubmit={onSubmit} note={note} setNote={setNote} />
+      )}
     </div>
   );
 };

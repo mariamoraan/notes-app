@@ -7,15 +7,13 @@
 }
 
 .title-input {
-  padding: 12px;
-  margin-bottom: 24px;
+  margin: 8px 0 24px;
   border: none;
   outline: none;
   font-size: xx-large;
 }
 
 .content-input {
-  padding: 12px;
   height: 100%;
   width: 100%;
   flex: 1;

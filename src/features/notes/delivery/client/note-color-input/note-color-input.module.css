@@ -1,0 +1,51 @@
+.wrapper {
+  position: relative;
+}
+
+.dropdown-toggle-button {
+  padding: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.open-dropdown {
+  position: absolute;
+  top: 42px;
+  z-index: 1px;
+  padding: 12px;
+  width: max-content;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.closed-dropdown {
+  background: blue;
+}
+
+.options {
+  width: max-content;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 12px;
+  list-style: none;
+}
+
+.option {
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.option:hover {
+  opacity: 0.8;
+}

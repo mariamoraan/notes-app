@@ -6,7 +6,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { Note } from "../../domain/note";
+import { Note } from "../../domain/note.entity";
 import { useGetUseCase } from "@/core/hooks/use-get-use-case";
 import { GetNotesQuery } from "../../application/get-notes.query";
 import { DateTime } from "@/core/datetime/datetime";

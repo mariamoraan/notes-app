@@ -3,9 +3,10 @@
 import { bind } from "@/core/styles/bind";
 import styles from "./note-form.module.css";
 import { Dispatch, SetStateAction } from "react";
-import { Note, NotePrimitives } from "@/features/notes/domain/note";
+import { Note, NotePrimitives } from "@/features/notes/domain/note.entity";
 import { DateTime } from "@/core/datetime/datetime";
 import { NoteFormHeader } from "./note-form-header.component";
+import { NoteColorInput } from "../note-color-input/note-color-input.component";
 const cx = bind(styles);
 
 interface Props {
@@ -26,6 +27,11 @@ export const NoteForm = (props: Props) => {
   return (
     <form className={cx("wrapper")} onSubmit={submit}>
       <NoteFormHeader />
+      <NoteColorInput
+        initialValue={note.color}
+        onSelect={(color) => setNote((prev) => ({ ...prev, color: color }))}
+        className={cx("color-input")}
+      />
       <input
         id="title"
         name="title"

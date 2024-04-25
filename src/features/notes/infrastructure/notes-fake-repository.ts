@@ -1,4 +1,4 @@
-import { Note } from "../domain/note";
+import { Note } from "../domain/note.entity";
 import { NotesRepository } from "../domain/notes-repository";
 import { NotesMother } from "../domain/test/notes.mother";
 

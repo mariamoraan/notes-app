@@ -16,6 +16,7 @@ export class NoteColor extends ValueObject<NoteColorValue> {
     GREEN: { name: "GREEN", color: "#0FC613" },
     BLUE: { name: "BLUE", color: "#35BDF7" },
   };
+  static noteColorsList: NoteColorValue[] = Object.values(this.noteColors);
   static create(value: NoteColorValue): NoteColor {
     return new NoteColor(value);
   }
