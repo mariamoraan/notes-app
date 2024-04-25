@@ -10,6 +10,7 @@ import { GetNoteQuery } from "@/features/notes/application/get-note.query";
 import { UpdateNoteCommand } from "@/features/notes/application/update-note.command";
 import { DateTime } from "@/core/datetime/datetime";
 import { NoteColor } from "@/features/notes/domain/value-objects/note-color.value-object";
+import { NoteFormSkeleton } from "../note-form/note-form.skeleton.component";
 
 const cx = bind(styles);
 
@@ -47,8 +48,10 @@ export const EditeNote = (props: Props) => {
 
   return (
     <div className={cx("wrapper")}>
-      {note.id && (
+      {note.id ? (
         <NoteForm onSubmit={onSubmit} note={note} setNote={setNote} />
+      ) : (
+        <NoteFormSkeleton />
       )}
     </div>
   );

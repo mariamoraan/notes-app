@@ -1,0 +1,46 @@
+.skeleton-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.skeleton-color-input {
+  width: 24px;
+  height: 24px;
+  background: var(--skeleton-color);
+  border-radius: 100%;
+  animation: var(--skeleton-animation) infinite ease 2s;
+}
+
+.skeleton-title-input {
+  margin: 8px 0 24px;
+  height: 1ch;
+  width: 80%;
+  font-size: xx-large;
+  background: var(--skeleton-color);
+  border-radius: var(--skeleton-border-radius);
+  animation: var(--skeleton-animation) infinite ease 2s;
+}
+
+.skeleton-content-input {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.skeleton-content-line {
+  height: 2ch;
+  width: 100%;
+  background: var(--skeleton-color);
+  border-radius: var(--skeleton-border-radius);
+  animation: var(--skeleton-animation) infinite linear 2s;
+}
+
+.skeleton-content-line:last-child {
+  width: 80%;
+}

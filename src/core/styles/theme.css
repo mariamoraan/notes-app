@@ -11,6 +11,7 @@
   --on-secondary-color: white;
   --accent-color: #3655f5;
   --on-accent-color: white;
+  --skeleton-color: var(--light-gray-color);
 
   --error-color: #e53e3e;
   --on-error-color: white;
@@ -26,4 +27,19 @@
   /* Typography */
   --body-font-family: "Heebo-Regular", sans-serif;
   --title-font-family: "Heebo-Medium", sans-serif;
+
+  --skeleton-border-radius: var(--border-radius);
+  --skeleton-animation: skeletonAnimation;
+}
+
+@keyframes skeletonAnimation {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
 }
