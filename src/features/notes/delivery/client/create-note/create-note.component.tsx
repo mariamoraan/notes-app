@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { DateTime } from "@/core/datetime/datetime";
 import { UUID } from "@/core/uuid/uuid";
+import { NoteColor } from "@/features/notes/domain/value-objects/note-color.value-object";
 
 const cx = bind(styles);
 
@@ -21,7 +22,7 @@ export const CreateNote = () => {
     id: UUID.generateUUID(),
     title: "",
     content: "",
-    color: Note.noteColors.PINK.name,
+    color: NoteColor.noteColors.PINK,
     creationDate: DateTime.fromNow(),
     lastEditionDate: DateTime.fromNow(),
   });

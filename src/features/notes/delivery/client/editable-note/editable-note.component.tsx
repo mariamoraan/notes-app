@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { GetNoteQuery } from "@/features/notes/application/get-note.query";
 import { UpdateNoteCommand } from "@/features/notes/application/update-note.command";
 import { DateTime } from "@/core/datetime/datetime";
+import { NoteColor } from "@/features/notes/domain/value-objects/note-color.value-object";
 
 const cx = bind(styles);
 
@@ -22,7 +23,7 @@ const voidNote: NotePrimitives = {
   id: "",
   title: "",
   content: "",
-  color: Note.noteColors.PINK.name,
+  color: NoteColor.noteColors.PINK,
   creationDate: DateTime.fromNow(),
   lastEditionDate: DateTime.fromNow(),
 };

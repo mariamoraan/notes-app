@@ -3,6 +3,7 @@ import styles from "./note-card.module.css";
 import { bind } from "@/core/styles/bind";
 import Link from "next/link";
 import { TimeIcon } from "@/core/components/icons/icons";
+import { NoteColor } from "@/features/notes/domain/value-objects/note-color.value-object";
 const cx = bind(styles);
 
 interface Props {
@@ -27,7 +28,9 @@ export const NoteCard = (props: Props) => {
           </div>
           <div
             className={cx("color-tag")}
-            style={{ background: Note.noteColors[note.color].color }}
+            style={{
+              background: NoteColor.noteColors[note.color.value.name].color,
+            }}
           />
         </div>
       </div>
