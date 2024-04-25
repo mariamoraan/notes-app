@@ -11,7 +11,6 @@
   --on-secondary-color: white;
   --accent-color: #3655f5;
   --on-accent-color: white;
-  --skeleton-color: var(--light-gray-color);
 
   --error-color: #e53e3e;
   --on-error-color: white;
@@ -20,6 +19,7 @@
 
   --light-gray-color: #d1d5db;
   --gray-color: #818285;
+  --loading-grey: #ededed;
 
   /* Misc */
   --border-radius: var(--xs);
@@ -29,17 +29,23 @@
   --title-font-family: "Heebo-Medium", sans-serif;
 
   --skeleton-border-radius: var(--border-radius);
-  --skeleton-animation: skeletonAnimation;
+  --skeleton-animation: loading;
 }
 
 @keyframes skeletonAnimation {
   0% {
-    opacity: 0.7;
+    opacity: 0.5;
   }
   50% {
     opacity: 1;
   }
   100% {
-    opacity: 0.7;
+    opacity: 0.5;
+  }
+}
+
+@keyframes loading {
+  to {
+    background-position-x: -20%;
   }
 }

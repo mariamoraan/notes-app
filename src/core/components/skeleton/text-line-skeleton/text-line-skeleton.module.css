@@ -1,14 +1,6 @@
-.skeleton-wrapper {
+.text-skeleton {
+  height: 2ch;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  overflow-y: auto;
-}
-
-.skeleton-color-input {
-  width: 24px;
-  height: 24px;
   background-color: var(--loading-grey);
   background: linear-gradient(
       100deg,
@@ -19,10 +11,6 @@
     var(--loading-grey);
   background-size: 200% 100%;
   background-position-x: 180%;
-  border-radius: 100%;
+  border-radius: var(--skeleton-border-radius);
   animation: 1s var(--skeleton-animation) ease-in-out infinite;
-}
-
-.skeleton-title-input {
-  margin: 8px 0 24px 0;
 }
