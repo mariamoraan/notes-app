@@ -41,7 +41,7 @@ export const NotesProvider: FC<PropsWithChildren> = (props) => {
 
   const orderNotes = (notes: Note[], order: "ASC" | "DESC" = "ASC") => {
     const orderedNotesAsc = notes.sort((note1, note2) =>
-      DateTime.compare(note1.lastEditionDate, note2.creationDate)
+      DateTime.compare(note1.lastEditionDate, note2.lastEditionDate)
     );
     if (order === "ASC") return orderedNotesAsc;
     return orderedNotesAsc.reverse();
