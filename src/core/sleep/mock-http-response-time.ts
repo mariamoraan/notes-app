@@ -1,7 +1,7 @@
 import { sleep } from "./sleep";
 
 const MAX_HTTP_RESPONSE_DELAY = 0.8;
-const MIN_HTTP_RESPONSE_DELAY = 0.2;
+const MIN_HTTP_RESPONSE_DELAY = 0.5;
 
 export const mockHttpResponseTime = async () => {
   const resposnseTime =
