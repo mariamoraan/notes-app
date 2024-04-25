@@ -5,6 +5,7 @@ import styles from "./note-form.module.css";
 import { Dispatch, SetStateAction } from "react";
 import { Note, NotePrimitives } from "@/features/notes/domain/note";
 import { DateTime } from "@/core/datetime/datetime";
+import { NoteFormHeader } from "./note-form-header.component";
 const cx = bind(styles);
 
 interface Props {
@@ -15,7 +16,8 @@ interface Props {
 
 export const NoteForm = (props: Props) => {
   const { onSubmit, note, setNote } = props;
-  const submit = async () => {
+  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     onSubmit(
       Note.fromPrimitives({ ...note, lastEditionDate: DateTime.fromNow() })
     );
@@ -23,6 +25,7 @@ export const NoteForm = (props: Props) => {
 
   return (
     <form className={cx("wrapper")} onSubmit={submit}>
+      <NoteFormHeader />
       <input
         id="title"
         name="title"

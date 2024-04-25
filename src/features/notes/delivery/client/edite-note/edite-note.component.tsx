@@ -2,11 +2,9 @@
 
 import { bind } from "@/core/styles/bind";
 import { NoteForm } from "../note-form/note-form.component";
-import styles from "./editable-note.module.css";
+import styles from "./edite-note.module.css";
 import { Note, NotePrimitives } from "@/features/notes/domain/note";
-import { ArrowLeftIcon, SaveIcon } from "@/core/components/icons/icons";
 import { useGetUseCase } from "@/core/hooks/use-get-use-case";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { GetNoteQuery } from "@/features/notes/application/get-note.query";
 import { UpdateNoteCommand } from "@/features/notes/application/update-note.command";
@@ -28,9 +26,8 @@ const voidNote: NotePrimitives = {
   lastEditionDate: DateTime.fromNow(),
 };
 
-export const EditableNote = (props: Props) => {
+export const EditeNote = (props: Props) => {
   const { id } = props;
-  const router = useRouter();
   const { execute: getNote, result: currentNote } = useGetUseCase(GetNoteQuery);
   const { execute: updateNote } = useGetUseCase(UpdateNoteCommand);
 
@@ -46,33 +43,10 @@ export const EditableNote = (props: Props) => {
 
   const onSubmit = async (note: Note) => {
     updateNote(note);
-    router.back();
   };
 
   return (
     <div className={cx("wrapper")}>
-      <div className={cx("header")}>
-        <button
-          onClick={() => router.back()}
-          className={cx(["icon-button", "back-button"])}
-        >
-          <ArrowLeftIcon size={24} />
-        </button>
-        <button
-          onClick={() =>
-            onSubmit(
-              Note.fromPrimitives({
-                ...note,
-                lastEditionDate: DateTime.fromNow(),
-              })
-            )
-          }
-          className={cx(["icon-button", "save-button"])}
-        >
-          <SaveIcon size={24} />
-          Save
-        </button>
-      </div>
       <NoteForm onSubmit={onSubmit} note={note} setNote={setNote} />
     </div>
   );
