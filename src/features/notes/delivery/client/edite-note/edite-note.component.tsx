@@ -42,7 +42,7 @@ export const EditeNote = (props: Props) => {
   }, [currentNote]);
 
   const onSubmit = async (note: Note) => {
-    updateNote(note);
+    await updateNote(note);
   };
 
   return (

@@ -21,7 +21,6 @@
 
 .icon-button:hover {
   cursor: pointer;
-  opacity: 0.5;
 }
 
 .icon-button:disabled {
