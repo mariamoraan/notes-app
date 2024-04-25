@@ -6,7 +6,7 @@ const cx = bind(styles);
 export const Header = () => {
   return (
     <div className={cx("wrapper")}>
-      <p className={cx("title")}>Keep Note</p>
+      <p className={cx("title")}>ILoveNotes</p>
       <Image
         className={cx("image")}
         height={100}
