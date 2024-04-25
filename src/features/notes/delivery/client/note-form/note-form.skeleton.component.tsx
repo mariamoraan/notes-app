@@ -3,7 +3,6 @@
 import { bind } from "@/core/styles/bind";
 import styles from "./note-form.skeleton.module.css";
 import { NoteFormHeader } from "./note-form-header.component";
-import { TextLineSkeleton } from "@/core/components/skeleton/text-line-skeleton/text-line-skeleton.component";
 import { TextSkeleton } from "@/core/components/skeleton/text-skeleton/text-skeleton.component";
 import { TitleSkeleton } from "@/core/components/skeleton/title-skeleton/title-skeleton.component";
 const cx = bind(styles);
