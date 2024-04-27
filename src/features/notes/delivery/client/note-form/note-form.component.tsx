@@ -34,6 +34,7 @@ export const NoteForm = (props: Props) => {
         initialValue={note.color}
         onSelect={(color) => setNote((prev) => ({ ...prev, color: color }))}
         className={cx("color-input")}
+        data-testId="note-color-input"
       />
       <input
         id="title"
@@ -45,6 +46,7 @@ export const NoteForm = (props: Props) => {
         onChange={(e) =>
           setNote((prev) => ({ ...prev, title: e.target.value }))
         }
+        data-testId="note-title-input"
       />
       <textarea
         id="content"
@@ -56,6 +58,7 @@ export const NoteForm = (props: Props) => {
         onChange={(e) =>
           setNote((prev) => ({ ...prev, content: e.target.value }))
         }
+        data-testId="note-content-input"
       ></textarea>
     </form>
   );

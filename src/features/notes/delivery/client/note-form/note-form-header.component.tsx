@@ -20,10 +20,16 @@ export const NoteFormHeader = (props: Props) => {
         onClick={() => router.back()}
         className={cx("icon-button")}
         disabled={isLoading}
+        data-testId="go-back-button"
       >
         <ArrowLeftIcon size={24} />
       </button>
-      <button type="submit" className={cx("icon-button")} disabled={isLoading}>
+      <button
+        type="submit"
+        className={cx("icon-button")}
+        disabled={isLoading}
+        data-testId="save-note-button"
+      >
         <SaveIcon size={24} />
       </button>
     </div>

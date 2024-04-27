@@ -1,6 +1,6 @@
 import { DateTime as LuxonDatetime } from "luxon";
 
-enum DateComparison {
+export enum DateComparison {
   "EQUAL" = 0,
   "MINOR" = -1,
   "MAYOR" = 1,
@@ -8,20 +8,23 @@ enum DateComparison {
 
 export class DateTime {
   constructor(private readonly datetime: LuxonDatetime) {}
-  toIso() {
+  toIso(): string | null {
     return this.datetime.toUTC().toISO();
   }
-  toIsoDate() {
+  toIsoDate(): string | null {
     return this.datetime.toUTC().toISODate();
   }
-  toMillis() {
+  toMillis(): number {
     return this.datetime.toUTC().toMillis();
   }
-  static fromIso(isoDate: string) {
+  plus(days: number): DateTime {
+    return new DateTime(this.datetime.plus({ days }));
+  }
+  static fromIso(isoDate: string): DateTime {
     const luxonDate = LuxonDatetime.fromISO(isoDate);
     return new DateTime(luxonDate);
   }
-  static fromNow() {
+  static fromNow(): DateTime {
     return new DateTime(LuxonDatetime.now());
   }
   static compare(date1: DateTime, date2: DateTime): DateComparison {
