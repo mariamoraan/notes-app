@@ -4,7 +4,7 @@ import { NotesMother } from "../domain/NotesMother";
 import { NotesRepository } from "@/features/notes/domain/notes-repository";
 import { CreateNoteCommand } from "@/features/notes/application/create-note.command";
 
-describe("CreateNote", () => {
+describe("CreateNoteCommand", () => {
   it("CreateNote should call to the creat emethod of the injected repository with the new note", () => {
     const notesRepository = mock<NotesRepository>();
     const createNote = new CreateNoteCommand(notesRepository);

@@ -1,4 +1,4 @@
-import { NoteDto } from "./dto/note.dto";
+import { NoteDto } from "../dto/note.dto";
 
 export class CreateNotePo {
   static openCreationPage() {
