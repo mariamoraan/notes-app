@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "npm run test:unit",
+    "test": "npm run test:unit & npm run test:it",
     "test:unit": "jest -c jest.config.unit.ts",
+    "test:it": "jest -c jest.config.integration.ts",
     "prepare": "husky",
     "test:e2e": "cypress open"
   },

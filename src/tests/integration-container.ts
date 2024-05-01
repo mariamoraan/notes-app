@@ -1,13 +1,12 @@
 import { NOTES_REPOSITORY } from "@/core/dependency-injection/injection-tokens";
 import "reflect-metadata";
 import { container } from "tsyringe";
-import { mock } from "jest-mock-extended";
-import { NotesRepository } from "@/features/notes/domain/notes-repository";
+import { NotesLocalRepostory } from "@/features/notes/infrastructure/notes-local-repository";
 
 export const injectIntegrationDependencies = () => {
-  const mockedNotesRepositoy = mock<NotesRepository>();
-  container.register(NOTES_REPOSITORY, { useValue: mockedNotesRepositoy });
+  const notesRepository = new NotesLocalRepostory();
+  container.register(NOTES_REPOSITORY, { useValue: notesRepository });
   return {
-    mockedNotesRepositoy,
+    notesRepository,
   };
 };
