@@ -1,7 +1,7 @@
 "use client";
 
 import { bind } from "@/core/styles/bind";
-import styles from "./delete-note.module.css";
+import styles from "./delete-note-button.module.css";
 import { DeleteIcon } from "@/core/components/icons/icons";
 import { useGetUseCase } from "@/core/hooks/use-get-use-case";
 import { DeleteNoteCommand } from "@/features/notes/application/delete-note.command";

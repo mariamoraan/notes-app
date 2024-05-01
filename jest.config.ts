@@ -6,9 +6,11 @@ const config: Config = {
   coverageProvider: "v8",
   testEnvironment: "jsdom",
   preset: "ts-jest",
-  setupFilesAfterEnv: ["<rootDir>/src/tests/jest.setup.ts"],
   moduleNameMapper: {
     "@/(.*)": "<rootDir>/src/$1",
+  },
+  transform: {
+    "/.(js|jsx|ts|tsx)$/": "ts-jest",
   },
 };
 

@@ -11,7 +11,7 @@ import { UpdateNoteCommand } from "@/features/notes/application/update-note.comm
 import { DateTime } from "@/core/datetime/datetime";
 import { NoteColor } from "@/features/notes/domain/value-objects/note-color.value-object";
 import { NoteFormSkeleton } from "../note-form/note-form.skeleton.component";
-import { DeleteNoteButton } from "../delete-note/delete-note.component";
+import { DeleteNoteButton } from "../delete-note-button/delete-note-button.component";
 
 const cx = bind(styles);
 
