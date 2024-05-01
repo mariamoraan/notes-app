@@ -2,7 +2,7 @@
 
 import { bind } from "@/core/styles/bind";
 import styles from "./note-form.module.css";
-import { Dispatch, SetStateAction, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { Note, NotePrimitives } from "@/features/notes/domain/note.entity";
 import { DateTime } from "@/core/datetime/datetime";
 import { NoteFormHeader } from "./note-form-header.component";
@@ -13,10 +13,11 @@ interface Props {
   onSubmit: (note: Note) => Promise<void>;
   note: NotePrimitives;
   setNote: Dispatch<SetStateAction<NotePrimitives>>;
+  actions?: React.ReactNode;
 }
 
 export const NoteForm = (props: Props) => {
-  const { onSubmit, note, setNote } = props;
+  const { onSubmit, note, setNote, actions } = props;
   const [isLoading, setIsLoading] = useState(false);
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     setIsLoading(true);
@@ -29,12 +30,12 @@ export const NoteForm = (props: Props) => {
 
   return (
     <form className={cx("wrapper")} onSubmit={submit}>
-      <NoteFormHeader isLoading={isLoading} />
+      <NoteFormHeader isLoading={isLoading} actions={actions} />
       <NoteColorInput
         initialValue={note.color}
         onSelect={(color) => setNote((prev) => ({ ...prev, color: color }))}
         className={cx("color-input")}
-        data-testId="note-color-input"
+        data-testid="note-color-input"
       />
       <input
         id="title"
@@ -46,7 +47,7 @@ export const NoteForm = (props: Props) => {
         onChange={(e) =>
           setNote((prev) => ({ ...prev, title: e.target.value }))
         }
-        data-testId="note-title-input"
+        data-testid="note-title-input"
       />
       <textarea
         id="content"
@@ -58,7 +59,7 @@ export const NoteForm = (props: Props) => {
         onChange={(e) =>
           setNote((prev) => ({ ...prev, content: e.target.value }))
         }
-        data-testId="note-content-input"
+        data-testid="note-content-input"
       ></textarea>
     </form>
   );

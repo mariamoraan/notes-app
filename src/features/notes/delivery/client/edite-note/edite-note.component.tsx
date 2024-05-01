@@ -11,6 +11,7 @@ import { UpdateNoteCommand } from "@/features/notes/application/update-note.comm
 import { DateTime } from "@/core/datetime/datetime";
 import { NoteColor } from "@/features/notes/domain/value-objects/note-color.value-object";
 import { NoteFormSkeleton } from "../note-form/note-form.skeleton.component";
+import { DeleteNoteButton } from "../delete-note/delete-note.component";
 
 const cx = bind(styles);
 
@@ -49,7 +50,12 @@ export const EditeNote = (props: Props) => {
   return (
     <div className={cx("wrapper")}>
       {note.id ? (
-        <NoteForm onSubmit={onSubmit} note={note} setNote={setNote} />
+        <NoteForm
+          onSubmit={onSubmit}
+          note={note}
+          setNote={setNote}
+          actions={<DeleteNoteButton id={note.id} />}
+        />
       ) : (
         <NoteFormSkeleton />
       )}

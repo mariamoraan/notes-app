@@ -8,10 +8,11 @@ const cx = bind(styles);
 
 interface Props {
   isLoading: boolean;
+  actions?: React.ReactNode;
 }
 
 export const NoteFormHeader = (props: Props) => {
-  const { isLoading } = props;
+  const { isLoading, actions } = props;
   const router = useRouter();
   return (
     <div className={cx("wrapper")}>
@@ -20,18 +21,21 @@ export const NoteFormHeader = (props: Props) => {
         onClick={() => router.back()}
         className={cx("icon-button")}
         disabled={isLoading}
-        data-testId="go-back-button"
+        data-testid="go-back-button"
       >
         <ArrowLeftIcon size={24} />
       </button>
-      <button
-        type="submit"
-        className={cx("icon-button")}
-        disabled={isLoading}
-        data-testId="save-note-button"
-      >
-        <SaveIcon size={24} />
-      </button>
+      <div className={cx("actions")}>
+        {actions}
+        <button
+          type="submit"
+          className={cx("icon-button")}
+          disabled={isLoading}
+          data-testid="save-note-button"
+        >
+          <SaveIcon size={24} />
+        </button>
+      </div>
     </div>
   );
 };

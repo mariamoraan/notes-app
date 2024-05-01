@@ -5,4 +5,5 @@ export interface NotesRepository {
   findAll: () => Promise<Note[]>;
   find: (id: string) => Promise<Note>;
   update: (note: Note) => Promise<Note>;
+  delete: (id: string) => Promise<void>;
 }

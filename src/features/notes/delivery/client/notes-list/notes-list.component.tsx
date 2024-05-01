@@ -8,9 +8,8 @@ import { CardsSkeleton } from "@/core/components/skeleton/cards-skeleton/cards-s
 const cx = bind(styles);
 
 export const NotesList = () => {
-  const { filteredNotes, orderNotes } = useNotes();
-  if (filteredNotes.length === 0)
-    return <CardsSkeleton className={cx("wrapper")} />;
+  const { filteredNotes, orderNotes, isLoading } = useNotes();
+  if (isLoading) return <CardsSkeleton className={cx("wrapper")} />;
   return (
     <ul className={cx("wrapper")}>
       {orderNotes(filteredNotes, "DESC").map((note) => (

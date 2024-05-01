@@ -16,6 +16,7 @@ export interface NotesState {
   filteredNotes: Note[];
   filterNotes: (filter: string) => void;
   orderNotes: (notes: Note[], order: "ASC" | "DESC") => Note[];
+  isLoading: boolean;
 }
 
 export const NotesContext = createContext<NotesState>({
@@ -27,10 +28,11 @@ export const NotesContext = createContext<NotesState>({
   orderNotes: () => {
     throw Error("orderNotes() is not defined");
   },
+  isLoading: false,
 });
 
 export const NotesProvider: FC<PropsWithChildren> = (props) => {
-  const { execute, result } = useGetUseCase(GetNotesQuery);
+  const { execute, result, isLoading } = useGetUseCase(GetNotesQuery);
 
   const [notes, setNotes] = useState<Note[]>([]);
   const [filteredNotes, setFilteredNotes] = useState<Note[]>(notes);
@@ -58,7 +60,7 @@ export const NotesProvider: FC<PropsWithChildren> = (props) => {
 
   return (
     <NotesContext.Provider
-      value={{ notes, filteredNotes, filterNotes, orderNotes }}
+      value={{ notes, filteredNotes, filterNotes, orderNotes, isLoading }}
     >
       {props.children}
     </NotesContext.Provider>
