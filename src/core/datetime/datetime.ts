@@ -28,7 +28,7 @@ export class DateTime {
     return new DateTime(LuxonDatetime.now());
   }
   static compare(date1: DateTime, date2: DateTime): DateComparison {
-    if (date1.toMillis() < date2.toMillis()) return DateComparison.MAYOR;
+    if (date1.toMillis() < date2.toMillis()) return DateComparison.MINOR;
     if (date1.toMillis() > date2.toMillis()) return DateComparison.MAYOR;
     return DateComparison.EQUAL;
   }
