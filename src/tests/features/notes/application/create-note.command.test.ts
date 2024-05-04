@@ -5,7 +5,17 @@ import { NotesRepository } from "@/features/notes/domain/notes-repository";
 import { CreateNoteCommand } from "@/features/notes/application/create-note.command";
 
 describe("CreateNoteCommand", () => {
-  it("CreateNote should call to the creat emethod of the injected repository with the new note", () => {
+  it("CreateNote should call to the creat method of the injected repository with the new note", () => {
+    const notesRepository = mock<NotesRepository>();
+    const createNote = new CreateNoteCommand(notesRepository);
+    const note = NotesMother.note();
+
+    createNote.handle(note);
+
+    expect(notesRepository.create).toHaveBeenCalledWith(note);
+  });
+
+  it("CreateNote should call to the creat method of the injected repository with the new note", () => {
     const notesRepository = mock<NotesRepository>();
     const createNote = new CreateNoteCommand(notesRepository);
     const note = NotesMother.note();
