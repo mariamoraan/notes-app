@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Notes app
 
-## Getting Started
+## Descripción
 
-First, run the development server:
+Esta aplicación web ha sido desarrollada en el marco del taller de testing del Hola Mundo Day 2024. Su objetivo principal es servir como herramienta para la práctica de técnicas de testing, así como para mostrar buenas prácticas en su implementación.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Funcionalidades
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Visualizar notas: La aplicación permite visualizar un listado con todas las notas almacenadas.
+- Crear notas: Se pueden crear nuevas notas introduciendo un título y un cuerpo de texto.
+- Editar notas: Las notas existentes pueden ser editadas modificando su título y/o cuerpo de texto.
+- Eliminar notas: Las notas pueden ser eliminadas de forma individual o seleccionando varias a la vez.
+- Almacenamiento de datos
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Los datos de las notas se almacenan en el local storage del navegador del usuario. Esto significa que las notas se conservan mientras el navegador esté abierto, pero se borran al cerrarlo.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Propósito
 
-## Learn More
+Esta aplicación se ha creado con los siguientes objetivos:
 
-To learn more about Next.js, take a look at the following resources:
+- Fomentar la práctica de testing: Se pretende que sirva como herramienta para que cualquier persona pueda practicar técnicas de testing de forma autónoma.
+- Mostrar buenas prácticas: La aplicación implementa diversas buenas prácticas de testing, como la escritura de tests unitarios y la utilización de herramientas de testing automatizado.
+- Facilitar el aprendizaje: Se espera que el código de la aplicación sea claro y accesible, permitiendo a los usuarios aprender de su estructura y funcionamiento.
+- Invitación a la colaboración
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+El proyecto se encuentra disponible en GitHub bajo una licencia de código abierto. Se anima a cualquier persona interesada a realizar forks del repositorio, contribuir con mejoras o simplemente utilizarlo como base para sus propios proyectos.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Tecnologías utilizadas
 
-## Deploy on Vercel
+HTML5
+CSS3
+Typescript
+Nextjs 14
+Jest
+Cypress
+Husky (Githooks)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Enlaces
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Repositorio GitHub: [https://github.com/mariamoraan/notes-app](https://github.com/mariamoraan/notes-app)
