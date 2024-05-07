@@ -16,4 +16,15 @@ export class NotesMother {
     };
     return Note.fromPrimitives({ ...baseNotePrimitives, ...note });
   }
+  static noteWithoutContent() {
+    const baseNotePrimitives: NotePrimitives = {
+      id: "6f9e2c8a-b88e-4b",
+      title: "Grocery List",
+      content: "",
+      color: { name: "PINK", color: "#FF2C7A" },
+      creationDate: DateTime.fromIso("2024-04-28T00:24:00.000Z"),
+      lastEditionDate: DateTime.fromIso("2024-04-28T00:24:00.000Z"),
+    };
+    return Note.fromPrimitives(baseNotePrimitives);
+  }
 }
