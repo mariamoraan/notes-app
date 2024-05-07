@@ -7,22 +7,22 @@ describe("Datetime", () => {
       dateA: "2020-01-01",
       dateB: "2021-01-01",
       expected: DateComparison.MINOR,
-      textualComparison: "minor",
+      textualComparison: "minor than",
     },
     {
       dateA: "2021-01-01",
       dateB: "2020-01-01",
       expected: DateComparison.MAYOR,
-      textualComparison: "mayor",
+      textualComparison: "mayor than",
     },
     {
       dateA: "2020-01-01",
       dateB: "2020-01-01",
       expected: DateComparison.EQUAL,
-      textualComparison: "equal",
+      textualComparison: "equal to",
     },
   ])(
-    "should return $dateA is $textualComparison than $dateB",
+    "should return $dateA is $textualComparison $dateB",
     ({ dateA, dateB, expected }) => {
       const dateTimeA = DateTime.fromIso(dateA);
       const dateTimeB = DateTime.fromIso(dateB);
