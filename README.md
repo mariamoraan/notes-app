@@ -41,14 +41,16 @@ Technologies:
 ```
 git clone git@github.com:mariamoraan/notes-app.git
 ```
-### Install dependencies
+2. Install dependencies
 ```
 npm install
 ```
 ### Running the application
+1. Start the development server:
 ```
 npm run dev
 ```
+2. Open the application at http://localhost:8080
 
 ## Links
 GitHub repository: [https://github.com/mariamoraan/notes-app](https://github.com/mariamoraan/notes-app)
