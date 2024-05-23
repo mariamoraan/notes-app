@@ -10,7 +10,7 @@ This web application was developed within the framework of the testing workshop 
 - Create notes: New notes can be created by entering a title and a text body.
 - Edit notes: Existing notes can be edited by modifying their title and/or text body.
 - Delete notes: Notes can be deleted individually or by selecting several at once.
-- Data storage: Notes are saved in local storage
+- Data storage: Notes are saved in local storage.
 
 Note data is stored in the user's browser's local storage. This means that the notes are preserved while the browser is open, but are deleted when it is closed.
 
@@ -34,6 +34,21 @@ Technologies:
 - Jest
 - Cypress
 - Husky (Githooks)
+
+## How to Run the Project
+### Installation
+1. Clone the repository:
+```
+git clone git@github.com:mariamoraan/notes-app.git
+```
+### Install dependencies
+```
+npm install
+```
+### Running the application
+```
+npm run dev
+```
 
 ## Links
 GitHub repository: [https://github.com/mariamoraan/notes-app](https://github.com/mariamoraan/notes-app)
