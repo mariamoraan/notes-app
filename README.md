@@ -10,7 +10,7 @@ This web application was developed within the framework of the testing workshop 
 - Create notes: New notes can be created by entering a title and a text body.
 - Edit notes: Existing notes can be edited by modifying their title and/or text body.
 - Delete notes: Notes can be deleted individually or by selecting several at once.
-- Data storage
+- Data storage: Notes are saved in local storage
 
 Note data is stored in the user's browser's local storage. This means that the notes are preserved while the browser is open, but are deleted when it is closed.
 
